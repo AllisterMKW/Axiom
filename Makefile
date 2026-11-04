@@ -38,10 +38,10 @@ all:
 	@mkdir -p $(PATCHES_OUT_FOLDER)/$(AXIOM_UPDATE_OUT)
 	@touch $(PATCHES_OUT_FOLDER)/$(AXIOM_UPDATE_OUT)/update.txt
 	@mkdir -p $(3DSX_OUT_FOLDER) $(CIA_OUT_FOLDER)/$(CIA_OUT) $(COMBINED_OUT_FOLDER)/$(CIA_OUT)
-	
+
 # build patches
 	@$(MAKE) -C patches
-	
+
 # copy patches to patches folders
 	@if [ -f patches/act/out/code.ips ]; then \
 		cp -r patches/act/out/* $(PATCHES_OUT_FOLDER)/$(ACT_OUT); \
@@ -82,7 +82,7 @@ all:
 
 # copy plugin to patches folder
 	@cp -r plugin/plugin.3gx $(PATCHES_OUT_FOLDER)/$(PLUGIN_OUT)
-	
+
 # copy patches output to all 3 output folders
 	@find $(PATCHES_OUT_FOLDER) -mindepth 1 -maxdepth 1 -exec cp -r {} $(3DSX_OUT_FOLDER) \; 2>/dev/null || true
 	@find $(PATCHES_OUT_FOLDER) -mindepth 1 -maxdepth 1 -exec cp -r {} $(CIA_OUT_FOLDER) \; 2>/dev/null || true
@@ -96,7 +96,7 @@ all:
 	@echo copied 3dsx to 3dsx/combined out folder...
 	@cp app/*.3dsx $(3DSX_OUT_FOLDER)/$(3DS_OUT)
 	@cp app/*.3dsx $(COMBINED_OUT_FOLDER)/$(3DS_OUT)
-	
+
 # build and copy the cia version of the app
 	@$(MAKE) -C app cia
 	@echo copied cia to cia/combined out folder...

@@ -23,7 +23,7 @@
 | Miiverse | Unavailable | In the works |
 | Friend List | Works | |
 | Axiom (Proxyless patcher) | Works | |
-| Games | Unavailable | Not planned |
+| Games | Partially Working | Planned |
 | Theme Shop | Unavailable | In the works |
 
 ## Credits
